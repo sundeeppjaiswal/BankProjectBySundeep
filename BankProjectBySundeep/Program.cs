@@ -27,13 +27,13 @@ if (userName == "system" && password == "manager")
     do
     {
         //show main menu
-        System.Console.WriteLine("\n***Main menu***");
-        System.Console.WriteLine("1. Customers");
-        System.Console.WriteLine("2. Accounts");
-        System.Console.WriteLine("3. Funds Transfer");
-        System.Console.WriteLine("4. Funds Transfer Statement");
-        System.Console.WriteLine("5. Account Statement");
-        System.Console.WriteLine("0. Exit");
+        Console.WriteLine("\n***Main menu***");
+        Console.WriteLine("1. Customers");
+        Console.WriteLine("2. Accounts");
+        Console.WriteLine("3. Funds Transfer");
+        Console.WriteLine("4. Funds Transfer Statement");
+        Console.WriteLine("5. Account Statement");
+        Console.WriteLine("0. Exit");
 
         //accept menu choice from keyboard
         System.Console.Write("Enter choice: ");
@@ -42,11 +42,11 @@ if (userName == "system" && password == "manager")
         //switch-case to check menu choice
         switch (mainMenuChoice)
         {
-            case 1: //TO DO: Display customers menu
+            case 1: CustomersMenu();
                 break;
-            case 2: //TO DO: Display accounts menu
+            case 2: AccountsMenu();
                 break;
-            case 3: //TO DO: Display funds transfer menu
+            case 3: FundTransfer();
                 break;
             case 4: //TO DO: Display funds transfer statement menu
                 break;
@@ -57,10 +57,76 @@ if (userName == "system" && password == "manager")
 }
 else
 {
-    System.Console.WriteLine("Invalid username or password");
+    Console.WriteLine("Invalid username or password");
 }
 
 
 //about to exit
 Console.WriteLine("Thank you! Visit again.");
 Console.ReadKey();
+
+static void CustomersMenu()
+{
+    //variable to store customers menu choice
+    int customerMenuChoice = -1;
+
+    //do-while loop starts
+    do
+    {
+        //print customers menu
+        Console.WriteLine("\n:::Customers menu:::");
+        Console.WriteLine("1. Add Customer");
+        Console.WriteLine("2. Delete Customer");
+        Console.WriteLine("3. Update Customer");
+        Console.WriteLine("4. View Customers");
+        Console.WriteLine("0. Back to Main Menu");
+
+        //accept customers menu choice
+        Console.Write("Enter choice: ");
+        customerMenuChoice = Convert.ToInt32(Console.ReadLine());
+    } while (customerMenuChoice != 0);
+}
+
+
+static void AccountsMenu()
+{
+    //variable to store accounts menu choice
+    int accountsMenuChoice = -1;
+
+    //do-while loop starts
+    do
+    {
+        //print  accounts menu
+        Console.WriteLine("\n:::Accounts menu:::");
+        Console.WriteLine("1. Add Account");
+        Console.WriteLine("2. Delete Account");
+        Console.WriteLine("3. Update Account");
+        Console.WriteLine("4. View Accounts");
+        Console.WriteLine("0. Back to Main Menu");
+
+        //accept accounts menu choice
+        System.Console.Write("Enter choice: ");
+        accountsMenuChoice = Convert.ToInt32(System.Console.ReadLine());
+    } while (accountsMenuChoice != 0);
+}
+static void FundTransfer()
+{
+    //variable to store accounts menu choice
+    int accountsMenuChoice = -1;
+
+    //do-while loop starts
+    do
+    {
+        //print  accounts menu
+        Console.WriteLine("\n:::Fund Transfer:::");
+        Console.WriteLine("1. Add Funds");
+        Console.WriteLine("2. Send Funds to Existing Payee");
+        Console.WriteLine("3. Add Payee");
+        Console.WriteLine("4. View Balance");
+        Console.WriteLine("0. Back to Main Menu");
+
+        //accept accounts menu choice
+        Console.Write("Enter choice: ");
+        accountsMenuChoice = Convert.ToInt32(Console.ReadLine());
+    } while (accountsMenuChoice != 0);
+}
